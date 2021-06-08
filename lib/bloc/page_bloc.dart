@@ -7,12 +7,18 @@ part 'page_event.dart';
 part 'page_state.dart';
 
 class PageBloc extends Bloc<PageEvent, PageState> {
-  PageBloc() : super(PageInitial());
+  PageBloc() : super(OnInitialPage());
 
   @override
   Stream<PageState> mapEventToState(
     PageEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    if (event is GoToSplashPage) {
+      yield OnSplashPage();
+    } else if (event is GoToLoginPage) {
+      yield OnLoginPage();
+    } else if (event is GoToHomePage) {
+      yield OnHomePage();
+    }
   }
 }

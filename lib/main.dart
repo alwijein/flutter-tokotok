@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/bloc/page_bloc.dart';
 import 'package:flutter_auth_new/screens/wrapper/wrapper.dart';
 import 'package:flutter_auth_new/services/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -19,10 +21,15 @@ class MyApp extends StatelessWidget {
     return StreamProvider.value(
       value: AuthServices.userStream,
       initialData: null,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(),
-        home: Wrapper(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (_) => PageBloc()),
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(),
+          home: Wrapper(),
+        ),
       ),
     );
   }
