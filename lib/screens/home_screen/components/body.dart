@@ -5,14 +5,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SafeArea(
-        child: Column(
-          children: [
-            Text("TokoTOk"),
-          ],
-        ),
-      ),
+    return Center(
+      child: Text("it Home"),
     );
   }
 }
