@@ -27,7 +27,14 @@ class AuthServices {
 
       // ...
 
-    } catch (e) {
+    } catch (e, s) {
+      LogModel log = LogModel(
+        massage: e.toString(),
+        stackTrace: s.toString(),
+        createdAt: DateTime.now().microsecondsSinceEpoch,
+      );
+      LogHandler logger = new LogHandler();
+      logger.log(log);
       return SingInSingUpResult(message: e.toString().split(']')[1]);
     }
   }

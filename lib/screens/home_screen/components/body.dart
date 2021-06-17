@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/services/services.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -6,7 +7,12 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("it Home"),
+      child: ElevatedButton(
+        onPressed: () {
+          AuthServices.signOut();
+        },
+        child: Text("Sign Out"),
+      ),
     );
   }
 }

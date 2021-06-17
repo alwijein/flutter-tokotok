@@ -4,6 +4,7 @@ import 'package:flutter_auth_new/bloc/page_bloc.dart';
 import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter_auth_new/screens/splash_screen/splash_screen.dart';
+import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
@@ -13,10 +14,16 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     var user = Provider.of<User?>(context);
 
-    if (user != null) {
-      context.read<PageBloc>().add(GoToSplashPage());
+    if (user == null) {
+      if (!(prevPageEvent is GoToSplashPage)) {
+        prevPageEvent = GoToSplashPage();
+        context.read<PageBloc>().add(prevPageEvent!);
+      }
     } else {
-      context.read<PageBloc>().add(GoToHomePage());
+      if (!(prevPageEvent is GoToHomePage)) {
+        prevPageEvent = GoToHomePage();
+        context.read<PageBloc>().add(prevPageEvent!);
+      }
     }
 
     return BlocBuilder<PageBloc, PageState>(

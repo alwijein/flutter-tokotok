@@ -1,25 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/services/services.dart';
+import 'package:flutter_auth_new/screens/sign_in_screen/components/body.dart';
+import 'package:flutter_auth_new/size_config.dart';
 
-class SignInScreen extends StatefulWidget {
+class SignInScreen extends StatelessWidget {
   const SignInScreen({Key? key}) : super(key: key);
 
   @override
-  _SignInScreenState createState() => _SignInScreenState();
-}
-
-class _SignInScreenState extends State<SignInScreen> {
-  @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            AuthServices.signIn('admin@mail.io', 'adminadmin');
-          },
-          child: Text("SingIn"),
-        ),
+      appBar: AppBar(
+        title: Text('Sign In Screen'),
       ),
+      body: Body(),
     );
   }
 }
