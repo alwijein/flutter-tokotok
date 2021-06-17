@@ -37,6 +37,5 @@ InputDecorationTheme inputDecorationTheme() {
     ),
     enabledBorder: outlineInputBorder,
     focusedBorder: outlineInputBorder,
-    focusColor: kPrimaryColor,
   );
 }
