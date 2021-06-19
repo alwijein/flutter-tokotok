@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/bloc/page_bloc.dart';
+import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
+import 'package:flutter_auth_new/bloc/user_bloc/user_bloc.dart';
 import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter_auth_new/screens/splash_screen/splash_screen.dart';
@@ -21,6 +22,7 @@ class Wrapper extends StatelessWidget {
       }
     } else {
       if (!(prevPageEvent is GoToHomePage)) {
+        context.read<UserBloc>().add(LoadedUser(id: user.uid));
         prevPageEvent = GoToHomePage();
         context.read<PageBloc>().add(prevPageEvent!);
       }

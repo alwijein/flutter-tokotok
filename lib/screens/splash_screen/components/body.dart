@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/bloc/page_bloc.dart';
+import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Body extends StatelessWidget {
