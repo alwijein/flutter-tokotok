@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/constants.dart';
 import 'package:flutter_auth_new/screens/components/primary_button.dart';
+import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 
 class SignForm extends StatefulWidget {
@@ -60,12 +60,7 @@ class _SignFormState extends State<SignForm> {
                 Spacer(
                   flex: 2,
                 ),
-                Text(
-                  "Lupa Password?",
-                  style: TextStyle(
-                    color: kSecondaryColor,
-                  ),
-                ),
+                Text("Lupa Password?", style: greyTextFont),
               ],
             ),
             PrimaryButton(

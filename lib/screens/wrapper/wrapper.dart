@@ -22,7 +22,7 @@ class Wrapper extends StatelessWidget {
       }
     } else {
       if (!(prevPageEvent is GoToHomePage)) {
-        context.read<UserBloc>().add(LoadedUser(id: user.uid));
+        context.read<UserBloc>().add(LoadUser(user.uid));
         prevPageEvent = GoToHomePage();
         context.read<PageBloc>().add(prevPageEvent!);
       }

@@ -11,8 +11,5 @@ class UserInitial extends UserState {}
 
 class UserLoaded extends UserState {
   final Users users;
-  UserLoaded({required this.users});
-
-  @override
-  List<Object> get props => [users];
+  UserLoaded(this.users);
 }

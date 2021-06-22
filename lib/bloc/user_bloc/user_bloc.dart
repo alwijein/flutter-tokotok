@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_auth_new/bootstrap.dart';
 import 'package:flutter_auth_new/models/models.dart';
 import 'package:flutter_auth_new/services/services.dart';
 
@@ -16,9 +15,9 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   Stream<UserState> mapEventToState(
     UserEvent event,
   ) async* {
-    if (event is LoadedUser) {
+    if (event is LoadUser) {
       Users? users = await UserServices.getUser(event.id);
-      yield UserLoaded(users: users!);
+      yield UserLoaded(users!);
     } else if (event is SignOut) {
       yield UserInitial();
     }

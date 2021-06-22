@@ -8,23 +8,23 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        BlocBuilder<UserBloc, UserState>(
-          builder: (_, userState) {
-            return userState is UserLoaded
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BlocBuilder<UserBloc, UserState>(
+            builder: (_, userState) => (userState is UserLoaded)
                 ? Text(userState.users.name)
-                : SizedBox();
-          },
-        ),
-        ElevatedButton(
-          onPressed: () {
-            AuthServices.signOut();
-          },
-          child: Text("Sign Out"),
-        ),
-      ],
+                : Text("Cannot Loaded"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              AuthServices.signOut();
+            },
+            child: Text("Sign Out"),
+          ),
+        ],
+      ),
     );
   }
 }

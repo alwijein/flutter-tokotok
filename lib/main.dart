@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
+import 'package:flutter_auth_new/bloc/user_bloc/user_bloc.dart';
 import 'package:flutter_auth_new/screens/wrapper/wrapper.dart';
 import 'package:flutter_auth_new/services/services.dart';
 import 'package:flutter_auth_new/theme.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (_) => PageBloc()),
+          BlocProvider(create: (_) => UserBloc()),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',

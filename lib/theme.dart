@@ -1,6 +1,6 @@
 import 'package:flutter_auth_new/bootstrap.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/constants.dart';
+import 'package:flutter_auth_new/shared/shared.dart';
 
 ThemeData theme() {
   return ThemeData(

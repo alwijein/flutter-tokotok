@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/constants.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/sign_form.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/social_lite_card.dart';
+import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -68,15 +68,11 @@ class Body extends StatelessWidget {
                   children: [
                     Text(
                       "Tidak Punya Akun? ",
-                      style: TextStyle(
-                        color: kSecondaryColor,
-                      ),
+                      style: greyTextFont,
                     ),
                     Text(
                       "Daftar",
-                      style: TextStyle(
-                        color: kPrimaryColor,
-                      ),
+                      style: orangeTextFont,
                     ),
                   ],
                 ),
