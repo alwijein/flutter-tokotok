@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/services/services.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     Key? key,
-    required this.email,
-    required this.password,
+    required this.text,
+    required this.press,
   }) : super(key: key);
-  final String email, password;
+  final String text;
+  final Function() press;
   @override
   Widget build(BuildContext context) {
     final ButtonStyle primaryButton = ElevatedButton.styleFrom(
@@ -24,11 +24,9 @@ class PrimaryButton extends StatelessWidget {
       height: getPropertionateScreenHeight(50),
       child: ElevatedButton(
         style: primaryButton,
-        onPressed: () {
-          AuthServices.signIn(email, password);
-        },
+        onPressed: press,
         child: Text(
-          "SignIn",
+          text,
           style: TextStyle(fontSize: getPropertionateScreenWidht(15)),
         ),
       ),

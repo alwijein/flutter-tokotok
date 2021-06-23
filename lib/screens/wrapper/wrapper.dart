@@ -6,6 +6,7 @@ import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter_auth_new/screens/splash_screen/splash_screen.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
+import 'package:flutter_auth_new/sing_up_screen/sign_up_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
@@ -31,8 +32,10 @@ class Wrapper extends StatelessWidget {
     return BlocBuilder<PageBloc, PageState>(
         builder: (_, pageState) => (pageState is OnSplashPage)
             ? SplashScreen()
-            : (pageState is OnLoginPage)
+            : (pageState is OnSignInPage)
                 ? SignInScreen()
-                : HomeScreen());
+                : (pageState is OnSignUpPage)
+                    ? SignUpScreen()
+                    : HomeScreen());
   }
 }

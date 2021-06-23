@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/screens/components/primary_button.dart';
+import 'package:flutter_auth_new/services/services.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 
@@ -14,6 +15,7 @@ class _SignFormState extends State<SignForm> {
   final TextEditingController password = new TextEditingController();
 
   final formKey = GlobalKey<FormState>();
+  bool remember = false;
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +54,21 @@ class _SignFormState extends State<SignForm> {
             Row(
               children: [
                 Checkbox(
+                  value: remember,
                   activeColor: kPrimaryColor,
-                  value: true,
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    setState(() {
+                      remember = !remember;
+                    });
+                  },
                 ),
-                Text("Tetap Login"),
+                GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        remember = !remember;
+                      });
+                    },
+                    child: Text("Tetap Login")),
                 Spacer(
                   flex: 2,
                 ),
@@ -64,8 +76,10 @@ class _SignFormState extends State<SignForm> {
               ],
             ),
             PrimaryButton(
-              email: email.text,
-              password: password.text,
+              text: "SignIn",
+              press: () {
+                AuthServices.signIn(email.text, password.text);
+              },
             ),
           ],
         ),

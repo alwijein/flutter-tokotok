@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/sign_form.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/social_lite_card.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
@@ -70,9 +72,14 @@ class Body extends StatelessWidget {
                       "Tidak Punya Akun? ",
                       style: greyTextFont,
                     ),
-                    Text(
-                      "Daftar",
-                      style: orangeTextFont,
+                    GestureDetector(
+                      onTap: () {
+                        context.read<PageBloc>().add(GoToSignUpPage());
+                      },
+                      child: Text(
+                        "Daftar",
+                        style: orangeTextFont,
+                      ),
                     ),
                   ],
                 ),
