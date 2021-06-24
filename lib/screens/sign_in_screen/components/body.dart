@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
-import 'package:flutter_auth_new/screens/sign_in_screen/components/sign_form.dart';
+import 'package:flutter_auth_new/screens/components/headling_text_logo.dart';
+import 'package:flutter_auth_new/screens/sign_in_screen/components/sign_in_form.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/social_lite_card.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
@@ -23,29 +24,10 @@ class Body extends StatelessWidget {
             ),
             child: Column(
               children: [
-                SvgPicture.asset(
-                  'assets/icons/TokoTok-Logo-Circle.svg',
-                  width: getPropertionateScreenWidht(120),
+                HeadlingTextLogo(
+                  subTitle: "Sign In To Continue",
                 ),
-                SizedBox(
-                  height: getPropertionateScreenHeight(20),
-                ),
-                Text(
-                  'Welcome To TokoTok',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: getPropertionateScreenWidht(20),
-                  ),
-                ),
-                Text(
-                  'Sign To Continue',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: getPropertionateScreenWidht(20),
-                  ),
-                ),
-                SignForm(),
+                SignInForm(),
                 Padding(
                   padding: EdgeInsets.symmetric(
                     vertical: getPropertionateScreenHeight(20),

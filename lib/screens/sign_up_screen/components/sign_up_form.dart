@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
 import 'package:flutter_auth_new/screens/components/primary_button.dart';
 import 'package:flutter_auth_new/services/services.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignForm extends StatefulWidget {
+class SignUpForm extends StatefulWidget {
   @override
-  _SignFormState createState() => _SignFormState();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _SignFormState extends State<SignForm> {
+class _SignUpFormState extends State<SignUpForm> {
   final TextEditingController email = new TextEditingController();
 
   final TextEditingController password = new TextEditingController();
+  final TextEditingController confirmPass = new TextEditingController();
 
   final formKey = GlobalKey<FormState>();
   bool remember = false;
@@ -49,36 +52,29 @@ class _SignFormState extends State<SignForm> {
               controller: password,
             ),
             SizedBox(
-              height: getPropertionateScreenHeight(10),
+              height: getPropertionateScreenHeight(20),
             ),
-            Row(
-              children: [
-                Checkbox(
-                  value: remember,
-                  activeColor: kPrimaryColor,
-                  onChanged: (value) {
-                    setState(() {
-                      remember = !remember;
-                    });
-                  },
-                ),
-                GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        remember = !remember;
-                      });
-                    },
-                    child: Text("Tetap Login")),
-                Spacer(
-                  flex: 2,
-                ),
-                Text("Lupa Password?", style: greyTextFont),
-              ],
+            TextFormField(
+              keyboardType: TextInputType.visiblePassword,
+              decoration: InputDecoration(
+                floatingLabelBehavior: FloatingLabelBehavior.always,
+                labelText: "Confirm Password",
+                hintText: "Masukkan Password Anda Disini",
+              ),
+              controller: confirmPass,
+            ),
+            SizedBox(
+              height: getPropertionateScreenHeight(20),
             ),
             PrimaryButton(
               text: "SignIn",
               press: () {
-                AuthServices.signIn(email.text, password.text);
+                AuthServices.signUp(
+                    email.text,
+                    password.text,
+                    email.text.split('@')[0],
+                    ["indonesia", "thiller", "fantasy"],
+                    'Inggris');
               },
             ),
           ],
