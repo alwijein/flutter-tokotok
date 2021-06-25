@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
 import 'package:flutter_auth_new/screens/components/primary_button.dart';
 import 'package:flutter_auth_new/services/services.dart';
-import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -70,11 +67,10 @@ class _SignUpFormState extends State<SignUpForm> {
               text: "SignIn",
               press: () {
                 AuthServices.signUp(
-                    email.text,
-                    password.text,
-                    email.text.split('@')[0],
-                    ["indonesia", "thiller", "fantasy"],
-                    'Inggris');
+                  email.text,
+                  password.text,
+                  email.text.split('@')[0],
+                );
               },
             ),
           ],

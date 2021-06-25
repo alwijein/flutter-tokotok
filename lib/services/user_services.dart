@@ -17,10 +17,8 @@ class UserServices {
     _userCollection.doc(users.id).set({
       'email': users.email,
       'name': users.name,
-      'balance': users.balance,
-      'selectedGenres': users.selectedGenres,
-      'selectedLanguage': users.selectedLanguage,
-      'profilePicture': users.profilePicture ?? "",
+      'profilePicture':
+          users.profilePicture ?? "assets/icons/profile-picture.svg",
     });
   }
 
@@ -31,11 +29,7 @@ class UserServices {
     return Users(
       id,
       data['email'],
-      balance: data['balance'],
       profilePicture: data['profilePicture'],
-      selectedGenres:
-          (data['selectedGenres'] as List).map((e) => e.toString()).toList(),
-      selectedLanguage: data['selectedLanguage'],
       name: data['name'],
     );
   }

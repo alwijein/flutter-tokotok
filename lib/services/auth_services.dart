@@ -5,8 +5,8 @@ class AuthServices {
 
   // Fugnsi Untuk Melakukan SignUp
 
-  static Future<SingInSingUpResult> signUp(String email, String password,
-      String name, List<String> selectedGenres, String selectedLanguage) async {
+  static Future<SingInSingUpResult> signUp(
+      String email, String password, String name) async {
     try {
       UserCredential userCredential = await _auth
           .createUserWithEmailAndPassword(email: email, password: password);
@@ -15,8 +15,6 @@ class AuthServices {
 
       Users user = userCredential.user!.convertToUser(
         name: name,
-        selectedGenres: selectedGenres,
-        selectedLanguage: selectedLanguage,
       );
 
       // ...

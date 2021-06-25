@@ -29,13 +29,13 @@ class Body extends StatelessWidget {
                 SignUpForm(),
                 Padding(
                   padding: EdgeInsets.only(
-                    top: getPropertionateScreenHeight(75),
+                    top: getPropertionateScreenHeight(55),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Tidak Punya Akun? ",
+                        "Sudah Punya Akun? ",
                         style: greyTextFont,
                       ),
                       GestureDetector(
@@ -43,7 +43,7 @@ class Body extends StatelessWidget {
                           context.read<PageBloc>().add(GoToSignInPage());
                         },
                         child: Text(
-                          "Daftar",
+                          "Login",
                           style: orangeTextFont,
                         ),
                       ),
