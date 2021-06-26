@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/bloc/page_bloc/page_bloc.dart';
 import 'package:flutter_auth_new/bloc/user_bloc/user_bloc.dart';
 import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
+import 'package:flutter_auth_new/screens/navbar/navbar.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:flutter_auth_new/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:flutter_auth_new/screens/splash_screen/splash_screen.dart';
@@ -36,6 +37,6 @@ class Wrapper extends StatelessWidget {
                 ? SignInScreen()
                 : (pageState is OnSignUpPage)
                     ? SignUpScreen()
-                    : HomeScreen());
+                    : NavBar());
   }
 }

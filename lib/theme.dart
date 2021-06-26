@@ -4,7 +4,7 @@ import 'package:flutter_auth_new/shared/shared.dart';
 
 ThemeData theme() {
   return ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: kScaffoldColor,
     appBarTheme: appBarTheme(),
     inputDecorationTheme: inputDecorationTheme(),
   );
@@ -12,7 +12,7 @@ ThemeData theme() {
 
 AppBarTheme appBarTheme() {
   return AppBarTheme(
-    color: Colors.white,
+    color: kScaffoldColor,
     elevation: 0.0,
     brightness: Brightness.light,
     textTheme: TextTheme(

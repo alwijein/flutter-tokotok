@@ -1,6 +1,6 @@
 part of 'shared.dart';
 
-Color kPrimaryColor = Color(0xFFFF7643);
+Color kPrimaryColor = Color(0xFFFF9C63);
 Color kPrimaryLightColor = Color(0xFFFFECDF);
 LinearGradient kPrimaryGradientColor = LinearGradient(
   begin: Alignment.topLeft,
@@ -10,6 +10,9 @@ LinearGradient kPrimaryGradientColor = LinearGradient(
 Color kSecondaryColor = Color(0xFFADADAD);
 Color kTextColor = Color(0xFF7575757);
 
+Color kScaffoldColor = Color(0xFFF0F2F5);
+Color kRedColor = Color(0xFFFF7C8C);
+const Color kBlueColor = Color(0xAAA5A4FF);
 Duration kAnimationDuration = Duration(milliseconds: 250);
 
 // Fonts Style Text
@@ -20,7 +23,7 @@ TextStyle blackTextFont = GoogleFonts.raleway().copyWith(
 
 TextStyle titleBlackFont = GoogleFonts.raleway().copyWith(
   color: Colors.black,
-  fontWeight: FontWeight.w500,
+  fontWeight: FontWeight.bold,
   fontSize: 20,
 );
 
