@@ -53,6 +53,7 @@ class NavBar extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
+      TambahBarangScreen(),
       SettingScreen(),
     ];
   }
@@ -62,6 +63,12 @@ class NavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.home),
         title: ("Home"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(CupertinoIcons.add),
+        title: ("Add Items"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/screens/tambah_barang_screen/components/body.dart';
 
 class TambahBarangScreen extends StatelessWidget {
   const TambahBarangScreen({Key? key}) : super(key: key);
@@ -6,9 +7,7 @@ class TambahBarangScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Tambah Barang"),
-      ),
+      body: Body(),
     );
   }
 }
