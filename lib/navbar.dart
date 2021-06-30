@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_new/screens/cashier_screen/cashier_screen.dart';
 import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
 import 'package:flutter_auth_new/screens/setting_screen/setting_screen.dart';
 import 'package:flutter_auth_new/screens/tambah_barang_screen/tambah_barang_screen.dart';
@@ -54,6 +55,7 @@ class NavBar extends StatelessWidget {
     return [
       HomeScreen(),
       TambahBarangScreen(),
+      CashierScreen(),
       SettingScreen(),
     ];
   }
@@ -69,6 +71,12 @@ class NavBar extends StatelessWidget {
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.add),
         title: ("Add Items"),
+        activeColorPrimary: kPrimaryColor,
+        inactiveColorPrimary: CupertinoColors.systemGrey,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Icon(CupertinoIcons.cart),
+        title: ("Kasir"),
         activeColorPrimary: kPrimaryColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

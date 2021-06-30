@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/bloc/user_bloc/user_bloc.dart';
 import 'package:flutter_auth_new/screens/components/card_barang.dart';
 import 'package:flutter_auth_new/screens/home_screen/components/headling_selengkapnya.dart';
-import 'package:flutter_auth_new/screens/home_screen/components/rounded_card_barang.dart';
+import 'package:flutter_auth_new/screens/home_screen/components/rounded_card.dart';
 import 'package:flutter_auth_new/screens/home_screen/components/rounded_card_pendapatan.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
@@ -27,13 +27,13 @@ class Body extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          width: getPropertionateScreenWidht(70),
-                          height: getPropertionateScreenWidht(70),
+                          width: getPropertionateScreenWidht(60),
+                          height: getPropertionateScreenWidht(60),
                           decoration: BoxDecoration(
                             color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
-                          child: SvgPicture.asset(userState is UserLoaded
+                          child: SvgPicture.asset((userState is UserLoaded)
                               ? userState.users.profilePicture.toString()
                               : ""),
                         ),
@@ -64,14 +64,14 @@ class Body extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        RoundedCardBarang(
-                          title: "Stok Barang",
-                          count: "900",
+                        RoundedCard(
+                          title: "Laba Bersih",
+                          count: "Rp 67000",
                           color: kBlueColor,
                         ),
-                        RoundedCardBarang(
-                          title: "Barang Habis",
-                          count: "68",
+                        RoundedCard(
+                          title: "Total Pembeli",
+                          count: "68 Orang",
                           color: kRedColor,
                         ),
                       ],

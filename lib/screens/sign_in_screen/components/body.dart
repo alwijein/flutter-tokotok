@@ -5,7 +5,7 @@ import 'package:flutter_auth_new/models/models.dart';
 import 'package:flutter_auth_new/screens/components/headling_text_logo.dart';
 import 'package:flutter_auth_new/screens/components/primary_button.dart';
 import 'package:flutter_auth_new/screens/home_screen/home_screen.dart';
-import 'package:flutter_auth_new/screens/navbar/navbar.dart';
+import 'package:flutter_auth_new/navbar.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/sign_in_form.dart';
 import 'package:flutter_auth_new/screens/sign_in_screen/components/social_lite_card.dart';
 import 'package:flutter_auth_new/shared/shared.dart';

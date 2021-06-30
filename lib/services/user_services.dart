@@ -17,8 +17,7 @@ class UserServices {
     _userCollection.doc(users.id).set({
       'email': users.email,
       'name': users.name,
-      'profilePicture':
-          users.profilePicture ?? "assets/icons/profile-picture.svg",
+      'profilePicture': users.profilePicture ?? "",
     });
   }
 

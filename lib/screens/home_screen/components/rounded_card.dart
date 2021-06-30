@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_new/shared/shared.dart';
 import 'package:flutter_auth_new/size_config.dart';
 
-class RoundedCardBarang extends StatelessWidget {
-  const RoundedCardBarang({
+class RoundedCard extends StatelessWidget {
+  const RoundedCard({
     Key? key,
     required this.title,
     required this.count,
@@ -29,7 +29,7 @@ class RoundedCardBarang extends StatelessWidget {
         ],
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
@@ -43,7 +43,7 @@ class RoundedCardBarang extends StatelessWidget {
             count,
             style: TextStyle(
               color: Colors.white,
-              fontSize: getPropertionateScreenWidht(48),
+              fontSize: getPropertionateScreenWidht(20),
               fontWeight: FontWeight.bold,
             ),
           ),

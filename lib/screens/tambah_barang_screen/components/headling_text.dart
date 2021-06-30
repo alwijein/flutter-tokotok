@@ -19,6 +19,7 @@ class HeadlingText extends StatelessWidget {
               color: kPrimaryColor,
               fontWeight: FontWeight.bold,
               fontSize: getPropertionateScreenWidht(36),
+              letterSpacing: 2.0,
             ),
           ),
           Text(

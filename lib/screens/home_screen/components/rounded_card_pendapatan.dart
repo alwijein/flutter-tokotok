@@ -12,7 +12,7 @@ class RoundedCardPendapatan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        vertical: getPropertionateScreenHeight(20),
+        vertical: getPropertionateScreenHeight(30),
       ),
       child: Container(
         height: getPropertionateScreenHeight(150),
@@ -38,10 +38,10 @@ class RoundedCardPendapatan extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  "Pendapatan",
+                  "Total Pendapatan",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: getPropertionateScreenWidht(25),
+                    fontSize: getPropertionateScreenWidht(20),
                   ),
                 ),
                 Text(

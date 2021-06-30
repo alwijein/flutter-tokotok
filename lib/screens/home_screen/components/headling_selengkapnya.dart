@@ -21,11 +21,20 @@ class HeadlingSelengkapnya extends StatelessWidget {
         children: [
           Text(
             title,
-            style: blackTextFont,
+            style: TextStyle(
+              color: kTextColor,
+              fontSize: getPropertionateScreenWidht(18),
+            ),
           ),
           GestureDetector(
             onTap: press,
-            child: Text("Selengkapnya", style: greyTextFont),
+            child: Text(
+              "Selengkapnya",
+              style: TextStyle(
+                color: kSecondaryColor,
+                fontSize: getPropertionateScreenWidht(15),
+              ),
+            ),
           ),
         ],
       ),
