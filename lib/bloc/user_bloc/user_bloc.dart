@@ -20,6 +20,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       yield UserLoaded(users!);
     } else if (event is SignOut) {
       yield UserInitial();
+    } else if (event is AdminUser) {
+      Users users = new Users('A1', 'admin@mail.io',
+          name: 'Admin Ganteng',
+          profilePicture: 'assets/icons/profile-picture.svg');
+      yield UserLoaded(users);
     }
   }
 }

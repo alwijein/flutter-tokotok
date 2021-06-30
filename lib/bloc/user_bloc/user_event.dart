@@ -13,4 +13,6 @@ class LoadUser extends UserEvent {
   LoadUser(this.id);
 }
 
+class AdminUser extends UserEvent {}
+
 class SignOut extends UserEvent {}

@@ -8,6 +8,7 @@ class HeadlingTextLogo extends StatelessWidget {
     required this.subTitle,
   }) : super(key: key);
   final String subTitle;
+
   @override
   Widget build(BuildContext context) {
     return Column(
