@@ -33,8 +33,9 @@ dependencies:
   flutter_svg: ^0.22.0
   google_fonts: ^2.1.0
   path_provider: ^2.0.2
-  provider: ^5.0.0
   persistent_bottom_nav_bar: ^4.0.2
+  provider: ^5.0.0
+  sqflite: ^2.0.0+3
 
 dev_dependencies:
   flutter_test:
